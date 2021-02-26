@@ -1,0 +1,13 @@
+.displayRed{
+    text-align: center;
+    background-color: aqua;
+    color: red;
+    border: 4px solid black ;
+    }
+
+.displayBlack{
+    text-align: center;
+    background-color: aqua;
+    color: black;
+    border: 4px solid black ;
+}
