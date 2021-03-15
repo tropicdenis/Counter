@@ -15,7 +15,6 @@ function App() {
 
     function resetClickCounter() {
             setClickCounter(0)
-
     }
 
     return (
