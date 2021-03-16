@@ -1,24 +1,27 @@
 import React from 'react';
-import s from './Buttons.module.css'
+import s from './ButtonsStyle.module.css'
+import Button from "./Button";
 
 type buttonsPropsType = {
-    changeClickCounter: () => void
+    incClickCounter: () => void
     resetClickCounter: () => void
     clickCounter: number
+    startValue: number;
+    maxValue: number
 }
 
 function Buttons(props: buttonsPropsType) {
     return (
         <div className={s.buttons}>
-            <button className={s.button1} onClick={props.changeClickCounter}
-                    disabled={props.clickCounter === 5}>inc
-            </button>
-            <button className={s.button1} onClick={props.resetClickCounter}
-                    disabled={props.clickCounter === 0}
-            >reset
-            </button>
+            <Button onClick={props.incClickCounter}
+                    disabler={props.clickCounter === props.maxValue}
+                    buttonName={"inc"}
+            />
+            <Button onClick={props.resetClickCounter}
+                    disabler={props.clickCounter === props.startValue}
+                    buttonName={"reset"}
+            />
         </div>
-
     );
 }
 
