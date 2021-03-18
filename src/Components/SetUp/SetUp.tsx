@@ -10,7 +10,8 @@ type SetUpPropsType = {
     clickCounter: number
     maxValue: number
     startValue: number
-
+    maxValueChange: () => void
+    startValueChange: () => void
 };
 
 function SetUp(props: SetUpPropsType) {
@@ -19,6 +20,8 @@ function SetUp(props: SetUpPropsType) {
             <SetUpDisplay
                 maxValue={props.maxValue}
                 startValue={props.startValue}
+                maxValueChange={props.maxValueChange}
+                startValueChange={props.startValueChange}
             />
             <div className={s.buttons}>
                 <Button onClick={props.setClickCounter}

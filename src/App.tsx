@@ -5,8 +5,9 @@ import SetUp from "./Components/SetUp/SetUp";
 
 
 function App() {
-    let startValue = 0;
-    let maxValue = 1;
+
+    const [startValue, setStartValue]= useState(0)
+    const [maxValue, setMaxValue]= useState(1)
 
     const [clickCounter, setClickCounter] = useState<number>(0);
 
@@ -15,6 +16,12 @@ function App() {
             const newClickCounter = clickCounter + 1
             setClickCounter(newClickCounter)
         }
+    }
+    function maxValueChange() {
+        setMaxValue(maxValue)
+    }
+    function startValueChange() {
+        setStartValue(startValue)
     }
 
     function resetClickCounter() {
@@ -30,6 +37,8 @@ function App() {
                    clickCounter={clickCounter}
                    maxValue={maxValue}
                    startValue={startValue}
+                   maxValueChange={maxValueChange}
+                   startValueChange={startValueChange}
             />
             <Counter incClickCounter={incClickCounter}
                      resetClickCounter={resetClickCounter}
