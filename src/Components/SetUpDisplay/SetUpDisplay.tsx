@@ -5,8 +5,8 @@ import React, {ChangeEvent} from "react";
 type SetUpDisplayPropsType = {
     maxValue: number
     startValue: number
-    maxValueChange: (maxValue: number)=> void
-    startValueChange: (startValue: number)=> void
+    maxValueChange: (newMaxValue: number)=> void
+    startValueChange: (newStartValue: number)=> void
 
 }
 
@@ -23,13 +23,16 @@ function SetUpDisplay(props: SetUpDisplayPropsType) {
     return (
         <div className={(props.startValue < 0) ||
         (props.maxValue === props.startValue) ? s.displayRed : s.displayBlack}>
+            max value:
             <input type={"number"}
                    name={"max value"}
-                   defaultValue={props.maxValue}
-                   onChange={maxValueChange} />
+                   value={props.maxValue}
+                   onChange={maxValueChange}
+            />
+            start value:
             <input type={"number"}
                    name={"start value"}
-                   defaultValue={props.startValue}
+                   value={props.startValue}
                    onChange={startValueChange}/>
         </div>
 

@@ -1,6 +1,4 @@
 import React from 'react';
-import Buttons from "../Buttons/Buttons";
-import Display from "../Display/Display";
 import s from './SetUp.module.css'
 import Button from "../Buttons/Button";
 import SetUpDisplay from "../SetUpDisplay/SetUpDisplay";
@@ -10,8 +8,8 @@ type SetUpPropsType = {
     clickCounter: number
     maxValue: number
     startValue: number
-    maxValueChange: () => void
-    startValueChange: () => void
+    maxValueChange: (newMaxValue: number) => void
+    startValueChange: (startMaxValue: number) => void
 };
 
 function SetUp(props: SetUpPropsType) {

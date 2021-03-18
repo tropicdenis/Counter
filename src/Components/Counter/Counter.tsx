@@ -14,7 +14,10 @@ type CounterPropsType = {
 function Counter(props: CounterPropsType) {
     return (
         <div className={s.counter}>
-            <Display clickCounter={props.clickCounter}/>
+            <Display clickCounter={props.clickCounter}
+                     maxValue={props.maxValue}
+                     startValue={props.startValue}
+            />
             <Buttons incClickCounter={props.incClickCounter}
                      resetClickCounter={props.resetClickCounter}
                      clickCounter={props.clickCounter}
