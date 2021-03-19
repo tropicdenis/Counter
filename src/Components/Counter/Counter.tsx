@@ -9,6 +9,7 @@ type CounterPropsType = {
     clickCounter: number
     startValue: number;
     maxValue: number
+    onEdit: boolean
 };
 
 function Counter(props: CounterPropsType) {
@@ -17,12 +18,14 @@ function Counter(props: CounterPropsType) {
             <Display clickCounter={props.clickCounter}
                      maxValue={props.maxValue}
                      startValue={props.startValue}
+                     onEdit={props.onEdit}
             />
             <Buttons incClickCounter={props.incClickCounter}
                      resetClickCounter={props.resetClickCounter}
                      clickCounter={props.clickCounter}
                      startValue={props.startValue}
                      maxValue={props.maxValue}
+                     onEdit={props.onEdit}
 
             />
         </div>

@@ -9,7 +9,7 @@ function App() {
     let [startValue, setStartValue] = useState(0)
     let [maxValue, setMaxValue] = useState(0)
     let [clickCounter, setClickCounter] = useState<number>(0);
- console.log("render")
+    let [onEdit, setOnEdit] = useState(false)
 
     useEffect(() => {
         let clickCounterAsString = localStorage.getItem('clickCounter')
@@ -56,11 +56,13 @@ function App() {
 
     function maxValueChange(newMaxValue: number) {
         maxValue = newMaxValue
+        setOnEdit(true)
         setMaxValue(maxValue)
     }
 
     function startValueChange(newStartValue: number) {
         startValue = newStartValue
+        setOnEdit(true)
         setStartValue(startValue)
     }
 
@@ -69,6 +71,7 @@ function App() {
     }
 
     function setCounter() {
+        setOnEdit(false)
         setClickCounter(startValue)
     }
 
@@ -80,12 +83,15 @@ function App() {
                    startValue={startValue}
                    maxValueChange={maxValueChange}
                    startValueChange={startValueChange}
+                   onEdit={onEdit}
+
             />
             <Counter incClickCounter={incClickCounter}
                      resetClickCounter={resetClickCounter}
                      clickCounter={clickCounter}
                      maxValue={maxValue}
                      startValue={startValue}
+                     onEdit={onEdit}
             />
         </div>
     );
