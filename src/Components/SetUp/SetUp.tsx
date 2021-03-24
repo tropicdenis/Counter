@@ -13,7 +13,7 @@ type SetUpPropsType = {
     onEdit: boolean
 };
 
-function SetUp(props: SetUpPropsType) {
+function SetUp ({setClickCounter, ...props}:SetUpPropsType ) {  // ({setClickCounter, clickCounter, ...props})
     return (
         <div className={s.setup}>
             <SetUpDisplay
@@ -23,7 +23,7 @@ function SetUp(props: SetUpPropsType) {
                 startValueChange={props.startValueChange}
             />
             <div className={s.buttons}>
-                <Button onClick={props.setClickCounter}
+                <Button onClick={setClickCounter}
                         disabler={(props.startValue < 0) ||
                         (props.maxValue <= props.startValue) || props.onEdit===false}
                         buttonName={"set"}
